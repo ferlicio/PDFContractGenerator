@@ -1,10 +1,26 @@
 {
   "name": "pdfcontractgenerator",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library to generate contracts in PDF with TypeScript.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files":[
+    "lib/**/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "tsc"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferlicio/PDFContractGenerator.git"
   },
   "keywords": [
     "pdf",
@@ -13,12 +29,17 @@
   ],
   "author": "Fernando Felicio - NandoCodeCrafter.web.app",
   "license": "ISC",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/ferlicio/PDFContractGenerator.git/issues"
+  },
+  "homepage": "https://github.com/ferlicio/PDFContractGenerator.git#readme",
   "dependencies": {
     "jspdf": "^2.5.1"
   },
   "devDependencies": {
+    "prettier": "^3.0.3",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^5.2.2"
   }
 }
