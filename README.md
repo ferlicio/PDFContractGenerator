@@ -15,14 +15,14 @@ after installation, you can start setting up the generatePDF method:
 ```sh
 import { PDFContractGenerator } from "PDFContractGenerator";
 
-constructor(private contract:PDFContractGenerator) {}
+generator = new PDFContractGenerator()
 ```
 
 From this on, you can generate a contract by using the generatePDF() function
 
 The function requires the text to be passed in the function parameters along with optional parameters to format the contract text
 
-# text Formatting
+# Text Formatting
 You can put text inside custom tags to change text font size or alignment, for example:
 ```sh
 <c10> hello world, im testing it! </c10>
@@ -45,4 +45,8 @@ i dont belong here...
 `
 
 this.contract.generatePDF(exampleText,{fontSize:'15', marginTopBotton:'3'})
+```
+or you can also use it directly, without creating a variable:
+```sh
+new PDFContractGenerator().generatePDF(exampleText,{fontSize:'15', marginTopBotton:'3'})
 ```

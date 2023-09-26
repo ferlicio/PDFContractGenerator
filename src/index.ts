@@ -8,6 +8,7 @@ interface Params {
   lineHeight?: number;
   hasSignature?: boolean;
   documentLanguage?: string;
+  fileName?: string;
 }
 
 export const Greeter = (name: string) => `Hello ${name}`;
@@ -121,6 +122,6 @@ export class PDFContractGenerator {
         }
       }
     }
-    this.doc.output('dataurlnewwindow');
+    this.doc.output('dataurlnewwindow', { filename: (params?.fileName ? params?.fileName : 'contrato') + '.pdf' });
   }
 }

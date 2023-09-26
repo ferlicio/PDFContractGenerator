@@ -1,6 +1,6 @@
 {
   "name": "pdfcontractgenerator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A library to generate contracts in PDF with TypeScript.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
