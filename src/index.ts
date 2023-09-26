@@ -11,8 +11,6 @@ interface Params {
   fileName?: string;
 }
 
-export const Greeter = (name: string) => `Hello ${name}`;
-
 export class PDFContractGenerator {
   private doc: jsPDF = new jsPDF();
 
